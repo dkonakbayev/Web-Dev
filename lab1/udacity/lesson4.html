@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="./style.css">
+    <style> 
+        
+.image-box {
+    border: 10px dashed #fa8072;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+.text-block {
+    margin-left: 5px;
+    font-size: 1.5em;
+}
+
+.text-line {
+    color: #fa8072;
+}
+
+.text-line.finished {
+    color: rgb(170, 225, 88);
+    text-decoration: line-through;
+}
+    </style>
+</head>
+
+<body>
+    <img class="image-box" 
+         src="https://udacity.github.io/fend/lessons/L3/problem-set/02-style-an-image/kitten.jpg" 
+         alt="kitty">
+    
+    <h1>Famous Astronauts</h1>
+
+    <div class="text-block">
+        <h3>Facts:</h3>
+        <ul>
+            <li class="text-line">
+                Neil Armstrong was the first person to walk on the Moon in 1969.</li>
+            <li class="text-line finished">
+                Neil Armstrong commanded the Apollo 11 mission.</li>
+            <li class="text-line">
+                Toktar Aubakirov was the first Kazakh astronaut to fly into space.</li>
+            <li class="text-line finished">
+                Toktar Aubakirov flew to space aboard Soyuz TM-13 in 1991.</li>
+        </ul>
+    </div>
+</body>
+</html>
