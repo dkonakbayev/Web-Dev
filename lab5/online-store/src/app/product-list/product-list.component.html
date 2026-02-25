@@ -1,0 +1,69 @@
+<div class="filter">
+  <select (change)="setFilteredItem($event)">
+    <option value="None">No filter</option>
+    <option value="Phones">Phones</option>
+    <option value="Headphones">Headphones</option>
+    <option value="Laptops">Laptops</option>
+    <option value="Tablets">Tablets</option>
+  </select>
+</div>
+
+<div class="products-container">
+<div *ngFor="let product of filteredItems" class="products">
+  <h3>
+    <a
+      [title]="product.name + ' details'"
+      [routerLink]="['/products', product.id]"
+    >
+      {{ product.name }}
+    </a>
+  </h3>
+  <div class="img">
+    <div class="carousel">
+      <input type="checkbox" class="faux-ui-facia" />
+      <div class="slide" slide="1">
+        <img [src]="product.img3" alt="Slide 3" />
+      </div>
+
+      <input type="checkbox" class="faux-ui-facia" />
+      <div class="slide" slide="2">
+        <img [src]="product.img2" alt="Slide 2" />
+      </div>
+
+      <input type="checkbox" class="faux-ui-facia" />
+
+      <div class="slide" slide="3">
+        <img [src]="product.img" alt="Slide 1" />
+      </div>
+    </div>
+  </div>
+
+  <div class="line"></div>
+
+  <p *ngIf="product.description">Description: {{ product.description }}</p>
+
+  <div class="rate-likes">
+    <p *ngIf="product.rating">Rating: {{ product.rating }} ★</p>
+    <p>Likes: {{ product.likes }}</p>
+  </div>
+  <p *ngIf="product.price" style="font-weight: 600; font-size: large;">
+    {{ product.price | currency }}
+  </p>
+  <div class="likes">
+    <button type="button" (click)="incrementLikes(product.id)" class="like">
+      ❤️ Like
+    </button>
+    <button class="delete-button" (click)="deleteProduct(product.id)">
+        🗑 Delete
+    </button>
+  </div>
+
+  <button type="button" (click)="shareByTelegram(product.url)">Share by Telegram</button> 
+ 
+  <button type="button" (click)="shareByWhatsapp(product.url)">Share by Whatsapp</button>
+
+  <app-product-alerts [product]="product" (notify)="onNotify()">
+  </app-product-alerts>
+</div>
+</div>
+
