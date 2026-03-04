@@ -1,0 +1,12 @@
+h2 {
+  margin-top: 40px;
+  text-align: center;
+  color: #0f172a;
+}
+
+p {
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: center;
+  color: #64748b;
+}
